@@ -254,7 +254,16 @@
     .prototype-note { margin-top: 22px; font-size: .82rem; color: #8a94a6; }
 
     @media (max-width: 950px) {
-      .nav-links { display: none; }
+      .nav { flex-wrap: wrap; row-gap: 0; }
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 12px;
+        font-size: .9rem;
+        white-space: nowrap;
+      }
       .hero-grid, .problem-grid, .readiness-wrap, .experience-grid { grid-template-columns: 1fr; gap: 44px; }
       .hero { padding-top: 72px; }
       .hero-panel { max-width: 690px; }
@@ -263,9 +272,12 @@
     }
     @media (max-width: 640px) {
       .container { width: min(var(--max), calc(100% - 26px)); }
-      .nav { min-height: 72px; }
-      .site-logo { width: 190px; }
-      .nav-cta { padding: 10px 13px; font-size: .88rem; }
+      .nav { min-height: 72px; gap: 12px; }
+      .brand { min-width: 0; }
+      .nav-links a:first-child { display: none; }
+      .nav-links { justify-content: flex-start; gap: 24px; }
+      .site-logo { width: 150px; }
+      .nav-cta { padding: 10px 13px; font-size: .85rem; white-space: nowrap; }
       h1 { font-size: clamp(2.7rem, 14vw, 4.2rem); }
       .hero { padding: 58px 0 62px; }
       section { 
@@ -303,7 +315,7 @@
         <div>
           <div class="eyebrow">Practical AI adoption for SMEs</div>
           <h1>Make AI work for <span>your business.</span></h1>
-          <p class="hero-copy">AI Springboard helps organisations adopt AI safely, effectively and at their own pace — with practical strategy, training and governance shaped around real business needs.</p>
+          <p class="hero-copy">AI Springboard helps organisations adopt AI safely, effectively and at their own pace, with practical strategy, training and governance shaped around real business needs.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#snapshot">Take the free AI Readiness Snapshot →</a>
             <a class="btn btn-secondary" href="#services">See how I can help</a>
@@ -315,14 +327,14 @@
           <img class="hero-icon" src="assets/logo-icon.png" alt="" aria-hidden="true" />
           <div class="panel-label">A practical place to start</div>
           <h2>How ready is your organisation for AI?</h2>
-          <p>The AI Readiness Snapshot is a short assessment designed to show where your organisation stands now — and where attention may be needed next.</p>
+          <p>The AI Readiness Snapshot is a short assessment designed to show where your organisation stands now, and where attention may be needed next.</p>
           <div class="snapshot-grid">
             <div class="snapshot-item"><strong>Adoption</strong><span>Where AI is already being used</span></div>
             <div class="snapshot-item"><strong>Governance</strong><span>Policies, ownership and guardrails</span></div>
             <div class="snapshot-item"><strong>Confidence</strong><span>Skills and capability across teams</span></div>
             <div class="snapshot-item"><strong>Readiness</strong><span>Priorities for sensible next steps</span></div>
           </div>
-          <div class="panel-footer">Complete the Snapshot and receive a free personalised AI Readiness Report. Add your contact details so I can send and discuss your report.</div>
+          <div class="panel-footer">Complete the Snapshot and receive a free personalised AI Readiness Report. Add your contact details so you can receive your report.</div>
         </aside>
       </div>
     </section>
@@ -332,7 +344,7 @@
         <div>
           <div class="section-kicker">The challenge</div>
           <h2 class="section-title">AI adoption rarely arrives in a neat, organised way.</h2>
-          <p class="section-intro">Some organisations have barely started. Others already have pockets of enthusiastic AI use, but no shared approach to data, risk, governance or priorities. The goal is not simply to use more AI. It is to understand where AI genuinely helps — and where it does not.</p>
+          <p class="section-intro">Some organisations have barely started. Others already have pockets of enthusiastic AI use, but no shared approach to data, risk, governance or priorities. The goal is not simply to use more AI. It is to understand where AI genuinely helps, and where it does not.</p>
         </div>
         <div class="problem-cards">
           <div class="problem-card"><strong>“We know AI matters, but we do not know where to start.”</strong><p>Identify practical use cases and build confidence without overwhelming the organisation.</p></div>
@@ -348,7 +360,7 @@
         <div>
           <div class="section-kicker">AI Readiness Snapshot</div>
           <h2 class="section-title">A clearer starting point for your next AI decision.</h2>
-          <p class="section-intro">The Snapshot is a short lead-in assessment that helps reveal the current state of AI adoption in your organisation. It gives us something concrete to discuss, rather than starting with assumptions.</p>
+          <p class="section-intro">The Snapshot places your organisation in a tier accompanied by a brief description that reveals the current state of AI adoption in your organisation. For more detail, you can request a free AI Readiness Report.</p>
           <div class="hero-actions">
             <a 
               class="btn btn-primary" 
@@ -362,7 +374,7 @@
           <div class="steps">
             <div class="step"><div class="step-num">1</div><div><h3>Complete the short survey</h3><p>Share where AI is being used today, how confident people feel and what governance already exists.</p></div></div>
             <div class="step"><div class="step-num">2</div><div><h3>Receive a free readiness report</h3><p>Your responses are translated into a concise view of strengths, gaps and practical priorities.</p></div></div>
-            <div class="step"><div class="step-num">3</div><div><h3>Use it as a conversation starter</h3><p>The report helps frame sensible next steps — whether that is training, policy, strategy or a more detailed assessment.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div><h3>Use it as a conversation starter</h3><p>The report helps frame sensible next steps, whether that is training, policy, strategy or a more detailed assessment.</p></div></div>
           </div>
         </div>
       </div>
@@ -375,10 +387,10 @@
         <p class="section-intro">Engagements can range from an individual workshop to a wider programme of assessment, governance, capability-building and strategic support.</p>
 
         <div class="service-grid">
-          <article class="service-card"><div class="service-index">01 — READINESS & STRATEGY</div><h3>Work out what matters first.</h3><p>Assess your current position, identify appropriate use cases, clarify priorities and build a practical roadmap that matches your capacity and appetite for change.</p><div class="mini">Readiness reviews · prioritisation · strategy · roadmaps</div></article>
-          <article class="service-card"><div class="service-index">02 — TRAINING & ENABLEMENT</div><h3>Build capability people can actually use.</h3><p>Practical, role-aware training that helps people understand AI, apply it effectively and know where its limits and risks sit.</p><div class="mini">Workshops · team training · individual coaching · adoption support</div></article>
-          <article class="service-card"><div class="service-index">03 — GOVERNANCE & RISK</div><h3>Put proportionate guardrails around AI use.</h3><p>Create a practical framework for responsible AI adoption, including ownership, policy, data protection, appropriate use and decision-making responsibilities.</p><div class="mini">Governance frameworks · policies · risk reviews · shadow AI</div></article>
-          <article class="service-card"><div class="service-index">04 — WORKFLOW IMPROVEMENT</div><h3>Remove friction without creating new problems.</h3><p>Examine real workflows and processes, then identify where AI can reduce repetitive effort, improve quality or create capacity for higher-value human work.</p><div class="mini">Process discovery · use-case design · workflow improvement</div></article>
+          <article class="service-card"><div class="service-index">01 - READINESS & STRATEGY</div><h3>Work out what matters first.</h3><p>Assess your current position, identify appropriate use cases, clarify priorities and build a practical roadmap that matches your capacity and appetite for change.</p><div class="mini">Readiness reviews · prioritisation · strategy · roadmaps</div></article>
+          <article class="service-card"><div class="service-index">02 - TRAINING & ENABLEMENT</div><h3>Build capability people can actually use.</h3><p>Practical, role-aware training that helps people understand AI, apply it effectively and know where its limits and risks sit.</p><div class="mini">Workshops · team training · individual coaching · adoption support</div></article>
+          <article class="service-card"><div class="service-index">03 - GOVERNANCE & RISK</div><h3>Put proportionate guardrails around AI use.</h3><p>Create a practical framework for responsible AI adoption, including ownership, policy, data protection, appropriate use and decision-making responsibilities.</p><div class="mini">Governance frameworks · policies · risk reviews · shadow AI</div></article>
+          <article class="service-card"><div class="service-index">04 - WORKFLOW IMPROVEMENT</div><h3>Remove friction without creating new problems.</h3><p>Examine real workflows and processes, then identify where AI can reduce repetitive effort, improve quality or create capacity for higher-value human work.</p><div class="mini">Process discovery · use-case design · workflow improvement</div></article>
         </div>
       </div>
     </section>
@@ -387,7 +399,7 @@
       <div class="container">
         <div class="section-kicker">The AI Springboard approach</div>
         <h2 class="section-title">Progress without pressure.</h2>
-        <p class="section-intro">The objective is not to automate everything that can be automated. It is to help your organisation make informed decisions about where AI belongs, how it should be used and how people remain in control.</p>
+        <p class="section-intro">The objective is not to automate blindly. It is to help your organisation make informed decisions about where AI belongs, how it should be used, and how people remain in control.</p>
         <div class="principle-grid">
           <article class="principle"><div class="principle-dot"></div><h3>Purpose before technology</h3><p>Start with the business problem, customer need or workflow friction. AI is only useful if it improves something that matters.</p></article>
           <article class="principle"><div class="principle-dot"></div><h3>Governance by design</h3><p>Consider risk, data, accountability and appropriate use early enough to shape adoption — not after problems appear.</p></article>
